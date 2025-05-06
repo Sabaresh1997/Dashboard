@@ -3,46 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sample Homepage</title>
+  <title>My Professional Homepage</title>
   <style>
     :root {
       --bg-color: #ffffff;
-      --text-color: #333;
-      --primary-color: #4CAF50;
+      --text-color: #222;
+      --primary-color: #2e7d32;
+      --accent-color: #66bb6a;
     }
 
     body.dark-mode {
-      --bg-color: #1e1e1e;
-      --text-color: #f0f0f0;
-      --primary-color: #90ee90;
+      --bg-color: #121212;
+      --text-color: #f5f5f5;
+      --primary-color: #66bb6a;
     }
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
-      transition: background-color 0.3s, color 0.3s;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     header {
-      background: var(--primary-color);
-      padding: 1rem;
+      background-color: var(--primary-color);
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     header h1 {
+      color: white;
       margin: 0;
-      color: #fff;
+      font-size: 1.8rem;
     }
 
     nav a {
-      color: #fff;
-      margin-left: 1rem;
+      color: white;
+      margin-left: 1.5rem;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      transition: opacity 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
     }
 
     .toggle-btn {
@@ -52,7 +60,8 @@
       padding: 0.5rem 1rem;
       cursor: pointer;
       border-radius: 5px;
-      font-weight: bold;
+      font-weight: 600;
+      margin-left: 1rem;
     }
 
     .hero {
@@ -60,10 +69,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 80vh;
+      min-height: 75vh;
       text-align: center;
-      padding: 2rem;
-      animation: fadeIn 2s ease-in-out;
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, #f4f4f4, #e0f7e9);
+      transition: background 0.3s;
     }
 
     .hero h2 {
@@ -73,17 +83,18 @@
 
     .hero p {
       font-size: 1.2rem;
+      max-width: 700px;
     }
 
     .report-section {
-      padding: 4rem 2rem;
+      padding: 3rem 1rem;
       text-align: center;
-      background-color: #f9f9f9;
+      background-color: #fafafa;
     }
 
     .report-section h2 {
       font-size: 2rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     .report-section iframe {
@@ -91,17 +102,27 @@
       max-width: 1000px;
       height: 500px;
       border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
     footer {
       text-align: center;
       padding: 1rem;
-      background: #f4f4f4;
-      color: #555;
+      background-color: #eee;
+      color: #666;
+    }
+
+    body.dark-mode .hero {
+      background: linear-gradient(to right, #1f1f1f, #2a2a2a);
+    }
+
+    body.dark-mode .report-section {
+      background-color: #1a1a1a;
     }
 
     body.dark-mode footer {
-      background: #333;
+      background-color: #111;
       color: #aaa;
     }
   </style>
@@ -113,16 +134,15 @@
       <a href="#">Home</a>
       <a href="#report">Reports</a>
       <a href="#">Contact</a>
-      <button class="toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
+      <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
     </nav>
   </header>
 
   <section class="hero">
     <h2>Welcome to My Site!</h2>
-    <p>This is a clean and interactive homepage built with HTML, CSS, and JavaScript.</p>
+    <p>This is a clean and professional homepage built with HTML5, CSS3, and JavaScript. Explore the embedded Power BI report below.</p>
   </section>
 
-  <!-- Power BI Report Section -->
   <section id="report" class="report-section">
     <h2>Dice Posting - Apr 2025</h2>
     <iframe 
